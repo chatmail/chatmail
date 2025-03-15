@@ -576,6 +576,11 @@ def deploy_chatmail(config_path: Path, disable_mail: bool) -> None:
         ensure_newline=True,
     )
 
+    files.line(
+        name="Add 9.9.9.9 to resolv.conf",
+        path="/etc/resolv.conf",
+        line="nameserver 9.9.9.9",
+    )
     apt.update(name="apt update", cache_time=24 * 3600)
     apt.upgrade(name="upgrade apt packages", auto_remove=True)
 
