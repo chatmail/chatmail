@@ -481,6 +481,10 @@ def deploy_iroh_relay(config) -> None:
             "https://github.com/n0-computer/iroh/releases/download/v0.28.1/iroh-relay-v0.28.1-aarch64-unknown-linux-musl.tar.gz",
             "b915037bcc1ff1110cc9fcb5de4a17c00ff576fd2f568cd339b3b2d54c420dc4",
         ),
+        "armv7l": (
+            "https://github.com/n0-computer/iroh/releases/download/v0.28.1/iroh-relay-v0.28.1-aarch64-unknown-linux-musl.tar.gz",
+            "b915037bcc1ff1110cc9fcb5de4a17c00ff576fd2f568cd339b3b2d54c420dc4",
+        ),
     }[host.get_fact(facts.server.Arch)]
 
     apt.packages(
